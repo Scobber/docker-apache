@@ -2,9 +2,9 @@ FROM ubuntu:latest
 MAINTAINER Scott Pepper <scott-docker@pep.id.au>
 # Create a debug container for a cosmos-aware environment
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    apache2 php7.0 php7.0-mysql libapache2-mod-php7.0 curl && \
+    apache2 php7 php7-mysql libapache2-mod-php7 curl && \
     apt-get clean && rm -rf /var/lib/apt/lists/ && \
-    a2enmod php7.0 && \
+    a2enmod php7 && \
     a2enmod rewrite %% \
     RUN sed -i "s/error_reporting = .*$/error_reporting = E_ERROR | E_WARNING | E_PARSE/" /etc/php/7.0/apache2/php.ini
 # Manually set up the apache environment variables

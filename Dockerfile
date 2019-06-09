@@ -4,7 +4,7 @@ MAINTAINER Scott Pepper <scott-docker@pep.id.au>
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
     apache2 php php-mysql libapache2-mod-php curl && \
     apt-get clean && rm -rf /var/lib/apt/lists/ && \
-    a2enmod php7 && \
+    a2enmod php && \
     a2enmod rewrite %% \
     RUN sed -i "s/error_reporting = .*$/error_reporting = E_ERROR | E_WARNING | E_PARSE/" /etc/php/7.0/apache2/php.ini
 # Manually set up the apache environment variables

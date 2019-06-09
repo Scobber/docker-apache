@@ -2,7 +2,7 @@ FROM ubuntu:latest
 MAINTAINER Scott Pepper <scott-docker@pep.id.au>
 # Create a debug container for a cosmos-aware environment
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get -y install \
-    apache2 php7 php-mysql libapache2-mod-php curl && \
+    apache2 php php-mysql libapache2-mod-php curl && \
     apt-get clean && rm -rf /var/lib/apt/lists/ && \
     a2enmod php7 && \
     a2enmod rewrite %% \

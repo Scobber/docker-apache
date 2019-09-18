@@ -12,6 +12,7 @@ ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
 ENV APACHE_LOCK_DIR /var/lock/apache2
 ENV APACHE_PID_FILE /var/run/apache2.pid
+COPY apache2.conf /etc/apache2/apache2.conf
 # Expose apache.
 EXPOSE 80
 CMD /usr/sbin/apache2ctl -D FOREGROUND > /dev/stdout
